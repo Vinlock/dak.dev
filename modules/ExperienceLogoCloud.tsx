@@ -4,8 +4,8 @@ import NCSoftLogo from '../assets/svg/ncsoft_logo.svg'
 import WeedmapsLogo from '../assets/svg/weedmaps_full_logo.svg'
 
 const businesses: Business[] = [
-  { Icon: NCSoftLogo, name: 'NC Interactive, LLC', url: 'https://ncsoft.com' },
   { Icon: WeedmapsLogo, name: 'Weedmaps', url: 'https://weedmaps.com' },
+  { Icon: NCSoftLogo, name: 'NC Interactive, LLC', url: 'https://ncsoft.com' },
 ]
 
 const ExperienceLogoCloud = () => {
@@ -19,8 +19,8 @@ const ExperienceLogoCloud = () => {
   return (
     <div>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
-        <p className="text-center text-base font-semibold uppercase text-gray-600 tracking-wider">
-          Worked with businesses...
+        <p className="text-center font-display text-2xl font-semibold uppercase text-gray-600 tracking-wider">
+          Current and Previous Employers
         </p>
         <div className={gridClasses}>
           {businesses.map((business) => {
