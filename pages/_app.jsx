@@ -29,10 +29,14 @@ const App = ({ Component, pageProps }) => {
       <div className="font-body">
         <Head>
           <title>{title}</title>
+
+          {/* Primary Meta Tags */}
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
           <meta name="description" content={description} />
           <meta name="keywords" content={keywords} />
+
+          {/* Open Graph / Facebook */}
           <meta name="og:url" property="og:url" content="https://dak.dev" />
           <meta name="og:title" property="og:title" content={title} />
           <meta name="og:site_name" property="og:site_name" content={title} />
@@ -42,11 +46,22 @@ const App = ({ Component, pageProps }) => {
           <meta name="og:image:width" property="og:image:width" content="1200" />
           <meta name="og:image:width" property="og:image:height" content="630" />
           <meta name="og:image:width" property="og:image:alt" content={`${title}. ${description}`} />
+
+          {/* Twitter */}
+          <meta name="twitter:card" property="twitter:card" content="summary_large_image" />
+          <meta name="twitter:url" property="twitter:url" content="https://dak.dev/" />
+          <meta name="twitter:title" property="twitter:title" content={title} />
+          <meta name="twitter:description" property="twitter:description" content={description} />
+          <meta name="twitter:image" property="twitter:image" content="/images/social_image.jpg" />
+
+          {/* Style and Icons */}
           <meta name="theme-color" content="#101010" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
           <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
           <link rel="manifest" href="/site.webmanifest" />
+
+          {/* Fonts */}
           <link rel="preconnect" href="https://fonts.gstatic.com" />
           <link rel="preconnect" href="https://use.typekit.net" />
           <link href="https://fonts.googleapis.com/css2?family=Sen:wght@400;700;800&display=block" rel="stylesheet" />
