@@ -29,13 +29,19 @@ const App = ({ Component, pageProps }) => {
       <div className="font-body">
         <Head>
           <title>{title}</title>
+          <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
           <meta name="description" content={description} />
           <meta name="keywords" content={keywords} />
           <meta name="og:url" property="og:url" content="https://dak.dev" />
           <meta name="og:title" property="og:title" content={title} />
+          <meta name="og:site_name" property="og:site_name" content={title} />
           <meta name="og:type" property="og:type" content="website" />
           <meta name="og:description" property="og:description" content={description} />
+          <meta name="og:image" property="og:image" content="/images/social_image.jpg" />
+          <meta name="og:image:width" property="og:image:width" content="1200" />
+          <meta name="og:image:width" property="og:image:height" content="630" />
+          <meta name="og:image:width" property="og:image:alt" content={`${title}. ${description}`} />
           <meta name="theme-color" content="#101010" />
           <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
