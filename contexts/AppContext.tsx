@@ -1,4 +1,5 @@
 import { createContext, useState, useContext } from 'react'
+import Router from 'next/router'
 
 const AppContext = createContext({
   menuOpen: true,
@@ -7,6 +8,10 @@ const AppContext = createContext({
 
 export const AppProvider = (props) => {
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
+
+  Router.events.on('routeChangeStart', () => {
+    setMenuOpen(false)
+  })
 
   const toggleMenu = () => {
     console.log('test')

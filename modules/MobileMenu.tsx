@@ -1,4 +1,5 @@
-import { FC } from 'react'
+import type { FC } from 'react'
+import Link from 'next/link'
 import classnames from 'classnames'
 import type { IconPrefix, IconName } from '@fortawesome/pro-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -7,7 +8,16 @@ const menuLinks: MenuLinkGroup[] = [
   {
     title: 'Pages',
     menuItems: [
-      { icon: ['fas', 'home'], title: 'Home', url: '/' },
+      { icon: ['fas', 'home'], iconClasses: 'text-yellow-900', title: 'Home', url: '/' },
+    ]
+  },
+  {
+    title: 'Find Me On',
+    menuItems: [
+      { icon: ['fab', 'twitter'], iconClasses: 'text-twitter', title: 'Twitter', url: 'https://twitter.com/vinlockz' },
+      { icon: ['fab', 'dev'], iconClasses: 'text-black', title: 'Dev.to', url: 'https://dev.to/vinlock' },
+      { icon: ['fab', 'github'], iconClasses: 'text-github', title: 'Github', url: 'https://github.com/vinlock' },
+      { icon: ['fab', 'linkedin'], iconClasses: 'text-linkedin', title: 'LinkedIn', url: 'https://www.linkedin.com/in/dwashbrook/' },
     ]
   }
 ]
@@ -28,17 +38,25 @@ const MobileMenu: FC<Props> = (props) => {
     <div className={classes}>
       <nav className="w-full bg-white shadow-xl rounded-lg relative pb-5">
         <div className="absolute top-0 right-0 p-5 active:border-gray-100 rounded-lg" onClick={props.toggleOpen}>
-          <FontAwesomeIcon icon={['fas', 'times']} className="text-gray-700 hover:cursor-pointer w-sm-icon h-sm-icon" />
+          <FontAwesomeIcon icon={['fas', 'times']} className="text-gray-700 hover:cursor-pointer" style={{width: '20px'}} />
         </div>
         {menuLinks.map((link) => {
           const headerKey = `${link.title}_header`
           const menuGroup = `${link.title}_group`
           return [
-            <h3 key={headerKey} className="uppercase font-display font-bold text-gray-700 mb-3 px-5 pt-5">{link.title}</h3>,
+            <h3 key={headerKey} className="uppercase font-display font-bold text-gray-700 mb-5 px-5 pt-5">{link.title}</h3>,
             <div key={menuGroup} className="grid grid-cols-2 gap-3 border-b border-dashed px-5 pb-6">
               {link.menuItems.map((item) => {
-                const key = `${item.title}_item`
-                return <MenuLink key={key} icon={item.icon} title={item.title} url={item.url} />
+                const iconClasses = classnames('inline-block mr-3 w-sm-icon', item.iconClasses)
+                return (
+                  <div className="pb-0 pl-0.5 h-sm-icon" key={item.title}>
+                    <LinkComponent href={item.url}>
+                      <span className="flex flex-wrap items-center">
+                        <FontAwesomeIcon className={iconClasses} icon={item.icon} /> {item.title}
+                      </span>
+                    </LinkComponent>
+                  </div>
+                )
               })}
             </div>
           ]
@@ -48,12 +66,23 @@ const MobileMenu: FC<Props> = (props) => {
   )
 }
 
-const MenuLink: FC<MenuLinkProps> = (props) => {
+const LinkComponent: FC<LinkComponentProps> = (props) => {
+  if (props.href.startsWith('http')) {
+    return (
+      <a href={props.href} target="_blank">
+        {props.children}
+      </a>
+    )
+  }
   return (
-    <div className="pb-0 pl-0.5 flex items-center h-sm-icon">
-      <FontAwesomeIcon className="inline-block mr-3 w-sm-icon" icon={props.icon} /> {props.title}
-    </div>
+    <Link href={props.href}>
+      {props.children}
+    </Link>
   )
+}
+
+interface LinkComponentProps {
+  href: string
 }
 
 MobileMenu.defaultProps = {
@@ -68,12 +97,6 @@ interface Props {
   toggleOpen?: () => void
 }
 
-interface MenuLinkProps {
-  icon?: [IconPrefix, IconName]
-  title: string
-  url: string
-}
-
 interface MenuLinkGroup {
   title: string
   menuItems: MenuLinkItem[]
@@ -81,6 +104,7 @@ interface MenuLinkGroup {
 
 interface MenuLinkItem {
   icon: [IconPrefix, IconName],
+  iconClasses?: string,
   title: string
   url: string
 }

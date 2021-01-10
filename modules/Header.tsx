@@ -1,4 +1,5 @@
-import { FC } from 'react'
+import type { FC } from 'react'
+import Link from 'next/link'
 import classnames from 'classnames'
 import MobileMenu from '../modules/MobileMenu'
 import Logo from '../assets/svg/logo.svg'
@@ -12,10 +13,12 @@ const Header: FC<Props> = (props) => {
   return (
     <header className={classes}>
       <div className="grid grid-cols-2">
-        <Logo className="w-20 lg:w-24" />
-        <div className="text-right w-full p-1 inline-block align-middle lg:hidden">
-          <span className="p-2"  onClick={() => toggleMenu()}>
-            Menu <FontAwesomeIcon className="inline-block align-middle" style={{width:'15px', height: '15px'}} icon={['fas', 'chevron-right']} />
+        <Link href="/">
+          <Logo className="w-20 lg:w-24" />
+        </Link>
+        <div className="text-right w-full inline-block align-middle lg:hidden">
+          <span onClick={() => toggleMenu()}>
+            <FontAwesomeIcon icon={['fas', 'caret-circle-down']} className="inline-block" style={{height: '35px'}} />
           </span>
         </div>
       </div>

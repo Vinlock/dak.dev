@@ -2,13 +2,22 @@ import '../styles/globals.css'
 import '@animxyz/core'
 import Head from 'next/head'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faTimes, faChevronRight } from '@fortawesome/pro-solid-svg-icons'
-import { faTwitter, faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { faHome, faTimes, faChevronRight, faCaretCircleDown } from '@fortawesome/pro-solid-svg-icons'
+import { faTwitter, faGithub, faLinkedin, faDev } from '@fortawesome/free-brands-svg-icons'
 import { AppProvider } from '../contexts/AppContext'
 import Header from '../modules/Header'
 import Footer from '../modules/Footer'
 
-library.add(faHome, faTimes, faTwitter, faGithub, faLinkedin, faChevronRight)
+library.add(
+  faHome,
+  faTimes,
+  faTwitter,
+  faDev,
+  faGithub,
+  faLinkedin,
+  faChevronRight,
+  faCaretCircleDown,
+)
 
 const App = ({ Component, pageProps }) => {
   return (
