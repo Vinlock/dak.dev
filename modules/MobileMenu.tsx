@@ -51,7 +51,7 @@ const MobileMenu: FC<Props> = (props) => {
                 return (
                   <div className="pb-0 pl-0.5 h-sm-icon" key={item.title}>
                     <LinkComponent href={item.url}>
-                      <span className="flex flex-wrap items-center">
+                      <span className="flex flex-wrap items-center cursor-pointer">
                         <FontAwesomeIcon className={iconClasses} icon={item.icon} /> {item.title}
                       </span>
                     </LinkComponent>
