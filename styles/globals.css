@@ -6,9 +6,3 @@
 body {
     @apply relative;
 }
-
-#menu {
-    --xyz-scale-x: 0;
-    --xyz-scale-z: -1;
-    --xyz-scale-y: 0;
-}

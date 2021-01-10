@@ -10,10 +10,10 @@ module.exports = {
       './components/**/*.jsx',
       './components/**/*.ts',
       './components/**/*.tsx',
-      './views/**/*.js',
-      './views/**/*.jsx',
-      './views/**/*.ts',
-      './views/**/*.tsx',
+      './modules/**/*.js',
+      './modules/**/*.jsx',
+      './modules/**/*.ts',
+      './modules/**/*.tsx',
     ]
   },
   darkMode: false, // or 'media' or 'class'
