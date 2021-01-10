@@ -1,0 +1,33 @@
+version: "3.7"
+
+services:
+  app:
+    image: "node:latest"
+    command: bash -c "yarn && NODE_OPTIONS=--inspect yarn dev"
+    working_dir: "/var/app"
+    volumes:
+      - ./components:/var/app/components
+      - ./db:/var/app/db
+      - ./hooks:/var/app/hooks
+      - ./lib:/var/app/lib
+      - ./pages:/var/app/pages
+      - ./public:/var/app/public
+      - ./stores:/var/app/stores
+      - ./views:/var/app/views
+      - ./.npmrc:/var/app/.npmrc
+      - ./package.json:/var/app/package.json
+      - ./postcss.config.js:/var/app/postcss.config.js
+      - ./tailwind.config.js:/var/app/tailwind.config.js
+      - ./tsconfig.json:/var/app/tsconfig.json
+      - ./yarn.lock:/var/app/yarn.lock
+      - node-modules:/var/app/node_modules
+    tmpfs:
+      - /var/app/.next
+    ports:
+      - "${APP_PORT:-3000}:3000"
+      - "${DEBUG_PORT:-9229}:9229"
+    environment:
+      FONTAWESOME_NPM_AUTH_TOKEN: "${FONTAWESOME_NPM_AUTH_TOKEN}"
+
+volumes:
+  node-modules: {}
