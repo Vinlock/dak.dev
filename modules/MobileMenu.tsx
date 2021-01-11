@@ -9,7 +9,7 @@ const menuLinks: MenuLinkGroup[] = [
     title: 'Pages',
     menuItems: [
       { icon: ['fas', 'home'], iconClasses: 'text-yellow-900', title: 'Home', url: '/' },
-      { icon: ['fas', 'file-alt'], iconClasses: 'text-blue-800', title: 'Resumé', url: 'https://cdn.dak.dev/Dak_Washbrook_Resume.pdf' },
+      { icon: ['fas', 'file-pdf'], iconClasses: 'text-blue-800', title: 'Resumé', url: 'https://cdn.dak.dev/Dak_Washbrook_Resume.pdf' },
     ]
   },
   {
