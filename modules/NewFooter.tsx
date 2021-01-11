@@ -7,10 +7,10 @@ import Logo from '../assets/svg/logo.svg'
 
 const socialMedia: SocialMedia[] = [
   { name: 'Twitter', icon: ['fab', 'twitter'], url: 'https://twitter.com/vinlockz', classes: 'hover:text-twitter' },
-  { name: 'Instagram', icon: ['fab', 'instagram'], url: 'https://instagram.com/vinlockz', classes: 'hover:text-instagram' },
   { name: 'Github', icon: ['fab', 'github'], url: 'https://github.com/vinlock', classes: 'hover:text-github' },
   { name: 'Dev', icon: ['fab', 'dev'], url: 'https://dev.to/vinlock', classes: 'hover:text-dev' },
-  { name: 'LinkedIn', icon: ['fab', 'linkedin'], url: 'https://www.linkedin.com/in/dwashbrook/', classes: 'hover:text-linkedin' }
+  { name: 'LinkedIn', icon: ['fab', 'linkedin'], url: 'https://www.linkedin.com/in/dwashbrook/', classes: 'hover:text-linkedin' },
+  { name: 'Instagram', icon: ['fab', 'instagram'], url: 'https://instagram.com/vinlockz', classes: 'hover:text-instagram' },
 ]
 
 const navigationItems = [
@@ -18,7 +18,8 @@ const navigationItems = [
     title: 'Pages',
     items: [
       { title: 'Home', url: '/' },
-      { title: 'Referrals', url: '/referrals' },
+      // { title: 'Referrals', url: '/referrals' },
+      { title: 'Resumé', url: 'https://cdn.dak.dev/Dak_Washbrook_Resume.pdf' },
     ],
   },
   {

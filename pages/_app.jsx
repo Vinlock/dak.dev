@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import '@animxyz/core'
 import Head from 'next/head'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faTimes, faChevronRight, faCaretCircleDown } from '@fortawesome/pro-solid-svg-icons'
+import { faHome, faTimes, faChevronRight, faCaretCircleDown, faFileAlt } from '@fortawesome/pro-solid-svg-icons'
 import { faTwitter, faGithub, faLinkedin, faDev, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { MDXProvider } from '@mdx-js/react'
 import { AppProvider } from '../contexts/AppContext'
@@ -19,6 +19,7 @@ library.add(
   faChevronRight,
   faCaretCircleDown,
   faInstagram,
+  faFileAlt,
 )
 
 const title = 'Dak Washbrook | Software Engineer'
