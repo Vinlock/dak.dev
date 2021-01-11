@@ -82,6 +82,9 @@ const Container = styled.a<{ image?: string }>`
     opacity: 0.5;
     border-radius: 0.5rem;
     z-index: 0;
+    &:active {
+      opacity: 0.75;
+    }
   }
   &:hover {
     &::before {
