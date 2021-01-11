@@ -5,16 +5,6 @@ module.exports = {
       use: ["@svgr/webpack"],
     })
 
-    config.module.rules.push({
-      test: /\.css$/i,
-      loader: 'css-loader',
-      options: {
-        modules: {
-          localIdentName: '[hash:base64:5]',
-        },
-      },
-    })
-
     return config
   },
 }
