@@ -1,3 +1,5 @@
+const plugin = require('tailwindcss/plugin')
+
 module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
@@ -19,6 +21,10 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
+      backgroundImage: () => ({
+        'ncsoft-hq': 'url(\'/images/ncsoft_corporate_location.jpg\')',
+        'weedmaps-hq': 'url(\'/images/weedmaps_corporate_location.jpg\')',
+      }),
       textColor: () => ({
         github: 'rgb(110, 84, 148)',
         twitter: 'rgb(29, 161, 242)',
@@ -56,5 +62,35 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    plugin(({ addVariant, e }) => {
+      // before
+      addVariant('before', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`before${separator}${className}`)}::before`
+        })
+      })
+
+      // after
+      addVariant('after', ({ modifySelectors, separator }) => {
+        modifySelectors(({ className }) => {
+          return `.${e(`after${separator}${className}`)}::after`
+        })
+      })
+    }),
+    plugin(({ addUtilities }) => {
+      const contentUtilities = {
+        '.content': {
+          content: 'attr(data-content)',
+        },
+        '.content-before': {
+          content: 'attr(data-before)',
+        },
+        '.content-after': {
+          content: 'attr(data-after)',
+        },
+      }
+
+      addUtilities(contentUtilities, ['before', 'after'])
+    }),
   ],
 }
