@@ -10,7 +10,7 @@ export default function Home() {
         </p>
         <p className="mt-4 lg:mt-0">
           <a href="https://cdn.dak.dev/Dak_Washbrook_Resume.pdf" target="_blank" className="active:border active:border-gray-300 padding-2 font-bold text-red-800 hover:underline">
-            Download Resume
+            Download Resumé
           </a>
         </p>
       </div>
