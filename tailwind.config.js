@@ -29,6 +29,8 @@ module.exports = {
         github: 'rgb(110, 84, 148)',
         twitter: 'rgb(29, 161, 242)',
         linkedin: 'rgb(0, 119, 181)',
+        dev: '#101010',
+        instagram: '#f56040',
       }),
       minHeight: () => ({
         panel: '880px',
@@ -51,7 +53,8 @@ module.exports = {
     },
     fontFamily: {
       display: ['Sen', 'sans-serif'],
-      body: ['foco', 'sans-serif'],
+      body: ['effra', 'sans-serif'],
+      sans: ['effra', 'sans-serif'],
     }
   },
   variants: {
@@ -62,6 +65,7 @@ module.exports = {
   },
   plugins: [
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
     plugin(({ addVariant, e }) => {
       // before
       addVariant('before', ({ modifySelectors, separator }) => {

@@ -10,15 +10,15 @@ const Footer: FC<Props> = (props) => {
 
   return (
     <footer className={classes}>
-      <div className="container mx-auto pt-12 lg:pt-24">
+      <div className="container mx-auto pt-12 lg:pt-24 pb-10">
         <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4">
           <div>
             <Logo className="w-16" />
-            <p className="pt-4 text-gray-500">
+            <p className="pt-5 text-gray-500">
               Dak Washbrook
             </p>
-            <p className="pt-4 text-gray-500">
-              Creating solutions and expanding my knowledge.
+            <p className="pt-4 text-gray-500 text-sm">
+              Identifying and creating solutions and expanding my knowledge since 1991.
             </p>
           </div>
           <div>
@@ -38,9 +38,6 @@ const Footer: FC<Props> = (props) => {
               <FontAwesomeIcon icon={['fab', 'linkedin']} className="text-linkedin w-10 inline-block" />
             </a>
           </div>
-        </div>
-        <div className="text-center w-full text-sm text-gray-500 mt-10">
-          est. 1991
         </div>
       </div>
     </footer>
