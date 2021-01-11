@@ -17,6 +17,8 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.1",
     "@fortawesome/pro-solid-svg-icons": "^5.15.1",
     "@fortawesome/react-fontawesome": "^0.1.14",
+    "@mdx-js/loader": "^1.6.22",
+    "@next/mdx": "^10.0.5",
     "@nuxtjs/google-gtag": "^1.0.4",
     "@svgr/webpack": "^5.5.0",
     "@tailwindcss/forms": "^0.2.1",

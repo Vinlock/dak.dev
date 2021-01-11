@@ -21,6 +21,14 @@ const navigationItems = [
       { title: 'Referrals', url: '/referrals' },
     ],
   },
+  {
+    title: 'Legal',
+    items: [
+      { title: 'Privacy Policy', url: '/legal/privacy-policy' },
+      { title: 'Cookie Policy', url: '/legal/cookie-policy' },
+      { title: 'Terms of Service', url: '/legal/terms-of-service' },
+    ],
+  },
 ]
 
 const Footer: FC<Props> = (props) => {
@@ -56,7 +64,7 @@ const Footer: FC<Props> = (props) => {
             <div className="md:grid md:grid-cols-2 md:gap-8">
               {navigationItems.map((item) => {
                 return (
-                  <div>
+                  <div key={item.title}>
                     <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
                       {item.title}
                     </h3>
@@ -64,7 +72,7 @@ const Footer: FC<Props> = (props) => {
                       {item.items.map((i) => {
                         if (i.url.startsWith('http')) {
                           return (
-                            <li>
+                            <li key={i.title}>
                               <a href={i.url} target="_blank" className="cursor-pointer text-base text-gray-500 hover:text-gray-900">
                                 {i.title}
                               </a>
@@ -72,7 +80,7 @@ const Footer: FC<Props> = (props) => {
                           )
                         }
                         return (
-                          <li>
+                          <li key={i.title}>
                             <Link href={i.url}>
                               <span className="cursor-pointer text-base text-gray-500 hover:text-gray-900">{i.title}</span>
                             </Link>
