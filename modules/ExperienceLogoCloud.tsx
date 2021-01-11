@@ -20,7 +20,7 @@ const ExperienceLogoCloud = () => {
     <div>
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <p className="text-center font-display text-2xl font-semibold uppercase text-gray-600 tracking-wider">
-          Current and Previous Employers
+          Work History
         </p>
         <div className={gridClasses}>
           {businesses.map((business) => {
