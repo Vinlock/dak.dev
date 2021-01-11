@@ -2,7 +2,7 @@ import type { ElementType, FC } from 'react'
 import classnames from 'classnames'
 import styled from 'styled-components'
 import NCSoftLogo from '../assets/svg/ncsoft_logo.svg'
-import WeedmapsLogo from '../assets/svg/weedmaps_full_logo.svg'
+import WeedmapsLogo from '../assets/svg/weedmaps_full_logo_dark_bg.svg'
 
 const businesses: Business[] = [
   { Logo: WeedmapsLogo, name: 'Weedmaps', url: 'https://weedmaps.com', image: '/images/weedmaps_corporate_location.jpg' },
@@ -48,7 +48,7 @@ const WorkHistoryLogo: FC<WorkHistoryLogoProps> = (props) => {
   return (
     <Container href={props.business.url} target="_blank" image={props.business.image}>
       <div className={classes}>
-        <Logo className="max-h-12 w-full" alt={props.business.name} />
+        <Logo className="max-h-12 w-full shadow-lg" alt={props.business.name} />
       </div>
     </Container>
   )
