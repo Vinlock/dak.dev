@@ -4,7 +4,7 @@ import ExperienceLogoCloud from '../modules/ExperienceLogoCloud'
 export default function Home() {
   return [
     <Panel center={true}>
-      <div className="font-display text-2xl lg:text-3xl leading-relaxed lg:leading-loose">
+      <div className="max-w-7xl mx-auto font-display text-2xl lg:text-3xl leading-relaxed lg:leading-loose">
         <p>
           Hey! I am a self-motivated Software Engineer with a passion for understanding and always learning.
         </p>

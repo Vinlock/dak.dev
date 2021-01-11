@@ -12,9 +12,9 @@ const Header: FC<Props> = (props) => {
 
   return (
     <header className={classes}>
-      <div className="grid grid-cols-2">
+      <div className="grid grid-cols-2 max-w-7xl mx-auto">
         <Link href="/">
-          <Logo className="w-20 lg:w-24" />
+          <Logo className="w-20 lg:w-24 cursor-pointer" />
         </Link>
         <div className="text-right w-full inline-block align-middle lg:hidden">
           <span onClick={() => toggleMenu()}>
