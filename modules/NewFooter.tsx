@@ -6,11 +6,11 @@ import classnames from 'classnames'
 import Logo from '../assets/svg/logo.svg'
 
 const socialMedia: SocialMedia[] = [
-  { name: 'Twitter', icon: ['fab', 'twitter'], url: 'https://twitter.com/vinlockz', hoverClasses: 'text-twitter' },
-  { name: 'Instagram', icon: ['fab', 'instagram'], url: 'https://instagram.com/vinlockz', hoverClasses: 'text-instagram' },
-  { name: 'Github', icon: ['fab', 'github'], url: 'https://github.com/vinlock', hoverClasses: 'text-github' },
-  { name: 'Dev', icon: ['fab', 'dev'], url: 'https://dev.to/vinlock', hoverClasses: 'text-dev' },
-  { name: 'LinkedIn', icon: ['fab', 'linkedin'], url: 'https://www.linkedin.com/in/dwashbrook/', hoverClasses: 'text-linkedin' }
+  { name: 'Twitter', icon: ['fab', 'twitter'], url: 'https://twitter.com/vinlockz', classes: 'hover:text-twitter' },
+  { name: 'Instagram', icon: ['fab', 'instagram'], url: 'https://instagram.com/vinlockz', classes: 'hover:text-instagram' },
+  { name: 'Github', icon: ['fab', 'github'], url: 'https://github.com/vinlock', classes: 'hover:text-github' },
+  { name: 'Dev', icon: ['fab', 'dev'], url: 'https://dev.to/vinlock', classes: 'hover:text-dev' },
+  { name: 'LinkedIn', icon: ['fab', 'linkedin'], url: 'https://www.linkedin.com/in/dwashbrook/', classes: 'hover:text-linkedin' }
 ]
 
 const navigationItems = [
@@ -38,14 +38,13 @@ const Footer: FC<Props> = (props) => {
               </p>
               <div className="flex space-x-6">
                 {socialMedia.map((social) => {
-                  let classes = classnames('w-6 text-gray-500')
-                  if (social.hoverClasses) {
-                    classes = classnames(`hover:${social.hoverClasses}`)
-                  }
+                  let classes = classnames('w-6 text-gray-500', {
+                    [social.classes]: social.classes,
+                  })
 
                   return (
                     <a key={social.name} href={social.url} target="_blank">
-                      <FontAwesomeIcon className={`w-6 text-gray-500 ${social.hoverClasses && `hover:${social.hoverClasses}`}`} icon={social.icon} />
+                      <FontAwesomeIcon className={classes} icon={social.icon} />
                     </a>
                   )
                 })}
@@ -103,7 +102,7 @@ interface SocialMedia {
   name: string
   icon: [IconPrefix, IconName]
   url: string
-  hoverClasses?: string
+  classes?: string
 }
 
 export default Footer
