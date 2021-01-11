@@ -44,7 +44,7 @@ const Footer: FC<Props> = (props) => {
               <Logo className="cursor-pointer w-20 fill-current text-gray-500" />
             </Link>
             <p className="text-gray-500 text-base pt-2">
-              Identifying and creating solutions and expanding my knowledge since 1991.
+              Identifying and creating solutions all while expanding my knowledge since 1991.
             </p>
             <div className="flex space-x-4">
               {socialMedia.map((social) => {
