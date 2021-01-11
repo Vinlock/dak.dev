@@ -32,23 +32,25 @@ const Footer: FC<Props> = (props) => {
       <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
         <div className="xl:grid xl:grid-cols-3 xl:gap-8">
           <div className="space-y-8 xl:col-span-1">
-            <Logo className="w-20" />
-              <p className="text-gray-500 text-base">
-                Identifying and creating solutions and expanding my knowledge since 1991.
-              </p>
-              <div className="flex space-x-6">
-                {socialMedia.map((social) => {
-                  let classes = classnames('w-6 text-gray-500', {
-                    [social.classes]: social.classes,
-                  })
+            <Link href="/">
+              <Logo className="cursor-pointer w-20 fill-current text-gray-500" />
+            </Link>
+            <p className="text-gray-500 text-base">
+              Identifying and creating solutions and expanding my knowledge since 1991.
+            </p>
+            <div className="flex space-x-6">
+              {socialMedia.map((social) => {
+                let classes = classnames('w-6 text-gray-500', {
+                  [social.classes]: social.classes,
+                })
 
-                  return (
-                    <a key={social.name} href={social.url} target="_blank">
-                      <FontAwesomeIcon className={classes} icon={social.icon} />
-                    </a>
-                  )
-                })}
-              </div>
+                return (
+                  <a key={social.name} href={social.url} target="_blank">
+                    <FontAwesomeIcon className={classes} icon={social.icon} />
+                  </a>
+                )
+              })}
+            </div>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
             <div className="md:grid md:grid-cols-2 md:gap-8">
