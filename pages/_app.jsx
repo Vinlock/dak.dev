@@ -26,17 +26,9 @@ const title = 'Dak Washbrook | Software Engineer'
 const description = 'Self-motivated Software Engineer with a passion for understanding and always learning.'
 const keywords = 'software engineer, software developer, computer science, programming, golang, javascript, nodejs'
 
-const mdxComponents = {
-  // wrapper: (props) => (
-  //   <div className="max-w-7xl mx-auto prose sm:prose-sm lg:prose-lg xl:prose-xl">
-  //     <main {...props} />
-  //   </div>
-  // )
-}
-
 const App = ({ Component, pageProps }) => {
   return (
-    <MDXProvider components={mdxComponents}>
+    <MDXProvider>
       <AppProvider>
         <div className="font-body">
           <Head>
