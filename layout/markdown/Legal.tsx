@@ -3,7 +3,8 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import classnames from 'classnames'
-import pages from 'config/legal-pages'
+import pages from '../../config/legal-pages'
+import pageTitle from '../../lib/pageTitle'
 
 const MarkdownLayout: FC<Props> = (props) => {
   const router = useRouter()
@@ -16,7 +17,7 @@ const MarkdownLayout: FC<Props> = (props) => {
   return (
     <div className="max-w-7xl mx-auto prose">
       <Head>
-        <title>{props.title} / Legal - Dak Washbrook | Software Engineer</title>
+        <title>{pageTitle(`${props.title} / Legal`)}</title>
       </Head>
       <h1>Legal</h1>
       <div>

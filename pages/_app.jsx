@@ -8,6 +8,7 @@ import { MDXProvider } from '@mdx-js/react'
 import { AppProvider } from '../contexts/AppContext'
 import Header from '../modules/Header'
 import Footer from '../modules/NewFooter'
+import pageTitle from '../lib/pageTitle'
 
 library.add(
   faHome,
@@ -23,11 +24,11 @@ library.add(
   faPeopleArrows,
 )
 
-const title = 'Dak Washbrook | Software Engineer'
 const description = 'Self-motivated Software Engineer with a passion for understanding and always learning.'
 const keywords = 'software engineer, software developer, computer science, programming, golang, javascript, nodejs'
 
 const App = ({ Component, pageProps }) => {
+  const title = pageTitle()
   return (
     <MDXProvider>
       <AppProvider>

@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import pageTitle from '../lib/pageTitle'
 import DoordashLogo from '../assets/svg/doordash_logo.svg'
 
 const referrals = [
@@ -9,7 +10,7 @@ const Referrals = () => {
   return (
     <div className="container mx-auto">
       <Head>
-        <title>Referrals - Dak Washbrook | Software Engineer</title>
+        <title>{pageTitle('Referrals')}</title>
       </Head>
       <h1 className="font-display text-4xl font-semibold">Referrals</h1>
 
