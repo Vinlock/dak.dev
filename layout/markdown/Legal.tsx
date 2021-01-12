@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import classnames from 'classnames'
-import pages from '../../config/legal-pages'
+import pages from 'config/legal-pages'
 
 const MarkdownLayout: FC<Props> = (props) => {
   const router = useRouter()

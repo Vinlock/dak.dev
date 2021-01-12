@@ -2,7 +2,7 @@ import '../styles/globals.css'
 import '@animxyz/core'
 import Head from 'next/head'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faHome, faTimes, faChevronRight, faCaretCircleDown, faFilePdf } from '@fortawesome/pro-solid-svg-icons'
+import { faHome, faTimes, faChevronRight, faCaretCircleDown, faFilePdf, faPeopleArrows } from '@fortawesome/pro-solid-svg-icons'
 import { faTwitter, faGithub, faLinkedin, faDev, faInstagram } from '@fortawesome/free-brands-svg-icons'
 import { MDXProvider } from '@mdx-js/react'
 import { AppProvider } from '../contexts/AppContext'
@@ -20,6 +20,7 @@ library.add(
   faCaretCircleDown,
   faInstagram,
   faFilePdf,
+  faPeopleArrows,
 )
 
 const title = 'Dak Washbrook | Software Engineer'
@@ -78,7 +79,7 @@ const App = ({ Component, pageProps }) => {
               <Component {...pageProps} />
             </main>
           </div>
-          <Footer className="p-5 lg:p-8" />
+          <Footer className="p-5 lg:p-8 flex-shrink-0" />
         </div>
       </AppProvider>
     </MDXProvider>

@@ -4,31 +4,32 @@ import Link from 'next/link'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classnames from 'classnames'
 import Logo from '../assets/svg/logo.svg'
+import pages from '../config/pages'
+import socialMediaLinks from '../config/social-media'
+import legalPages from '../config/legal-pages'
 
-const socialMedia: SocialMedia[] = [
-  { name: 'Twitter', icon: ['fab', 'twitter'], url: 'https://twitter.com/vinlockz', classes: 'hover:text-twitter' },
-  { name: 'Github', icon: ['fab', 'github'], url: 'https://github.com/vinlock', classes: 'hover:text-github' },
-  { name: 'Dev', icon: ['fab', 'dev'], url: 'https://dev.to/vinlock', classes: 'hover:text-dev' },
-  { name: 'LinkedIn', icon: ['fab', 'linkedin'], url: 'https://www.linkedin.com/in/dwashbrook/', classes: 'hover:text-linkedin' },
-  { name: 'Instagram', icon: ['fab', 'instagram'], url: 'https://instagram.com/vinlockz', classes: 'hover:text-instagram' },
-]
+const socialMedia: SocialMediaLinks[] = socialMediaLinks.map((sm) => {
+  return {
+    name: sm.title,
+    icon: sm.icon,
+    url: sm.url,
+    classes: sm.hoverClasses,
+  }
+})
 
 const navigationItems = [
   {
     title: 'Pages',
-    items: [
-      { title: 'Home', url: '/' },
-      // { title: 'Referrals', url: '/referrals' },
-      { title: 'Resumé', url: 'https://cdn.dak.dev/Dak_Washbrook_Resume.pdf' },
-    ],
+    items: pages.map((page) => {
+      return {
+        title: page.title,
+        url: page.url,
+      }
+    }),
   },
   {
     title: 'Legal',
-    items: [
-      { title: 'Privacy Policy', url: '/legal/privacy-policy' },
-      { title: 'Cookie Policy', url: '/legal/cookie-policy' },
-      { title: 'Terms of Service', url: '/legal/terms-of-service' },
-    ],
+    items: legalPages,
   },
 ]
 
@@ -109,7 +110,7 @@ interface Props {
   className?: string
 }
 
-interface SocialMedia {
+interface SocialMediaLinks {
   name: string
   icon: [IconPrefix, IconName]
   url: string

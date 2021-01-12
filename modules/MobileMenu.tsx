@@ -3,25 +3,12 @@ import Link from 'next/link'
 import classnames from 'classnames'
 import type { IconPrefix, IconName } from '@fortawesome/pro-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import pages from '../config/pages'
+import socialMedia from '../config/social-media'
 
 const menuLinks: MenuLinkGroup[] = [
-  {
-    title: 'Pages',
-    menuItems: [
-      { icon: ['fas', 'home'], iconClasses: 'text-yellow-900', title: 'Home', url: '/' },
-      { icon: ['fas', 'file-pdf'], iconClasses: 'text-blue-800', title: 'Resumé', url: 'https://cdn.dak.dev/Dak_Washbrook_Resume.pdf' },
-    ]
-  },
-  {
-    title: 'Find Me On',
-    menuItems: [
-      { icon: ['fab', 'twitter'], iconClasses: 'text-twitter', title: 'Twitter', url: 'https://twitter.com/vinlockz' },
-      { icon: ['fab', 'github'], iconClasses: 'text-github', title: 'Github', url: 'https://github.com/vinlock' },
-      { icon: ['fab', 'dev'], iconClasses: 'text-black', title: 'Dev.to', url: 'https://dev.to/vinlock' },
-      { icon: ['fab', 'linkedin'], iconClasses: 'text-linkedin', title: 'LinkedIn', url: 'https://www.linkedin.com/in/dwashbrook/' },
-      { icon: ['fab', 'instagram'], iconClasses: 'text-instagram', title: 'Instagram', url: 'https://instagram.com/vinlockz' },
-    ]
-  }
+  { title: 'Pages', menuItems: pages },
+  { title: 'Find Me On', menuItems: socialMedia },
 ]
 
 const MobileMenu: FC<Props> = (props) => {
