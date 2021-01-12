@@ -34,6 +34,7 @@ const MobileMenu: FC<Props> = (props) => {
     'opacity-0': !props.open,
     'scale-100': props.open,
     'scale-75': !props.open,
+    'pointer-events-none': !props.open,
   })
 
   return (

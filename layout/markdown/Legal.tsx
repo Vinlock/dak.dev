@@ -8,6 +8,11 @@ import pages from '../../config/legal-pages'
 const MarkdownLayout: FC<Props> = (props) => {
   const router = useRouter()
 
+  const handleSelectChange = (event) => {
+    const value = event.target.value
+    return router.push(value)
+  }
+
   return (
     <div className="max-w-7xl mx-auto prose">
       <Head>
@@ -17,10 +22,10 @@ const MarkdownLayout: FC<Props> = (props) => {
       <div>
         <div className="sm:hidden">
           <label htmlFor="tabs" className="sr-only">Select a tab</label>
-          <select id="tabs" name="tabs" className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
+          <select id="tabs" name="tabs" onChange={handleSelectChange} className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-gray-500 focus:border-gray-500 sm:text-sm rounded-md">
             {pages.map((page) => {
               return (
-                <option key={page.title}>{page.title}</option>
+                <option key={page.title} selected={router.pathname.includes(page.url)} value={page.url}>{page.title}</option>
               )
             })}
           </select>
