@@ -62,10 +62,10 @@ const Footer: FC<Props> = (props) => {
             </div>
           </div>
           <div className="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-            <div className="md:grid md:grid-cols-2 md:gap-8">
+            <div className="grid grid-cols-2 md:gap-8 md:grid-cols-4 col-span-2 lg:col-span-2">
               {navigationItems.map((item) => {
                 return (
-                  <div key={item.title}>
+                  <div key={item.title} className="first:mt-0 mt-5 lg:mt-0">
                     <h3 className="text-sm font-semibold text-gray-400 tracking-wider uppercase">
                       {item.title}
                     </h3>
