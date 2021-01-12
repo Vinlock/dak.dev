@@ -20,7 +20,7 @@ const MarkdownLayout: FC<Props> = (props) => {
           <select id="tabs" name="tabs" className="block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
             {pages.map((page) => {
               return (
-                <option>{page.title}</option>
+                <option key={page.title}>{page.title}</option>
               )
             })}
           </select>
