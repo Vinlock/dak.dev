@@ -3,7 +3,7 @@ import Link from 'next/link'
 import classnames from 'classnames'
 import MobileMenu from '../modules/MobileMenu'
 import Logo from '../assets/svg/logo.svg'
-import { useApp } from 'contexts/AppContext'
+import { useApp } from '../contexts/AppContext'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Header: FC<Props> = (props) => {

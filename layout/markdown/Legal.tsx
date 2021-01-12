@@ -41,7 +41,7 @@ const MarkdownLayout: FC<Props> = (props) => {
                   'border-black text-black': isCurrentPage,
                 }, 'whitespace-nowrap py-4 px-1 border-b-2 font-medium text-sm cursor-pointer')
                 return (
-                  <Link href={page.url}>
+                  <Link href={page.url} key={page.title}>
                     <span className={classes}>
                       {page.title}
                     </span>

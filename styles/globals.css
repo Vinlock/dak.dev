@@ -3,6 +3,10 @@
 @tailwind utilities;
 @tailwind screens;
 
+html, body, #__next {
+    @apply h-full;
+}
+
 body {
     @apply relative;
 }

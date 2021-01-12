@@ -12,8 +12,10 @@ const Referrals = () => {
       <Head>
         <title>{pageTitle('Referrals')}</title>
       </Head>
-      <h1 className="font-display text-4xl font-semibold">Referrals</h1>
-
+      <div className="max-w-7xl mx-auto">
+        <h1 className="font-display text-4xl font-semibold">Referrals</h1>
+        <p className="mt-14">Coming Soon...</p>
+      </div>
     </div>
   )
 }
