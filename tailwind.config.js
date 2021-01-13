@@ -4,6 +4,8 @@ module.exports = {
   purge: {
     enabled: process.env.NODE_ENV === 'production',
     content: [
+      './config/**/*.js',
+      './config/**/*.ts',
       './pages/**/*.js',
       './pages/**/*.jsx',
       './pages/**/*.ts',
