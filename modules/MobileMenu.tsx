@@ -28,7 +28,7 @@ const MobileMenu: FC<Props> = (props) => {
     <div className={classes}>
       <nav className="w-full bg-white shadow-xl rounded-lg relative pb-5">
         <div className="absolute top-0 right-0 p-5 active:border-gray-100 rounded-lg" onClick={props.toggleOpen}>
-          <FontAwesomeIcon icon={['fas', 'times']} className="text-gray-700 hover:cursor-pointer" style={{width: '20px'}} />
+          <FontAwesomeIcon icon={['fas', 'times']} className="text-gray-700 cursor-pointer" style={{width: '20px'}} />
         </div>
         {menuLinks.map((link) => {
           const headerKey = `${link.title}_header`

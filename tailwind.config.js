@@ -69,26 +69,21 @@ module.exports = {
     extend: {
       scale: ['active'],
       borderColor: ['active'],
+      fontWeight: ['hover'],
+      backgroundSize: ['before'],
+      backgroundPosition: ['before'],
+      position: ['before'],
+      inset: ['before'],
+      opacity: ['before', 'hover'],
+      borderRadius: ['before'],
+      backgroundImage: ['before'],
+      zIndex: ['before'],
     },
   },
   plugins: [
+    require('tailwindcss-pseudo-elements'),
     require('@tailwindcss/forms'),
     require('@tailwindcss/typography'),
-    plugin(({ addVariant, e }) => {
-      // before
-      addVariant('before', ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => {
-          return `.${e(`before${separator}${className}`)}::before`
-        })
-      })
-
-      // after
-      addVariant('after', ({ modifySelectors, separator }) => {
-        modifySelectors(({ className }) => {
-          return `.${e(`after${separator}${className}`)}::after`
-        })
-      })
-    }),
     plugin(({ addUtilities }) => {
       const contentUtilities = {
         '.content': {

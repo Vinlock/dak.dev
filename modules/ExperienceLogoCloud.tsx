@@ -5,8 +5,8 @@ import NCSoftLogo from '../assets/svg/ncsoft_logo.svg'
 import WeedmapsLogo from '../assets/svg/weedmaps_full_logo_dark_bg.svg'
 
 const businesses: Business[] = [
-  { Logo: WeedmapsLogo, name: 'Weedmaps', url: 'https://weedmaps.com', image: '/images/weedmaps_corporate_location.jpg' },
-  { Logo: NCSoftLogo, name: 'NC Interactive, LLC', url: 'https://ncsoft.com', image: '/images/ncsoft_corporate_location.jpg' },
+  { Logo: WeedmapsLogo, name: 'Weedmaps', url: 'https://weedmaps.com', bg: 'bg-weedmaps-hq' },
+  { Logo: NCSoftLogo, name: 'NC Interactive, LLC', url: 'https://ncsoft.com', bg: 'bg-ncsoft-hq' },
 ]
 
 const ExperienceLogoCloud: FC = () => {
@@ -41,16 +41,25 @@ const WorkHistoryLogo: FC<WorkHistoryLogoProps> = (props) => {
     'cursor-pointer', 'relative'
   ])
 
-  if (!props.business.image) {
+  if (!props.business.bg) {
     classes = classnames(classes, ['bg-gray-100', 'hover:bg-gray-200'])
   }
 
+  const linkClasses = classnames([
+    'relative', 'bg-black', 'rounded-lg',
+  ], [
+    'before:content', 'before:bg-cover', 'before:bg-center',
+    'before:absolute', 'before:top-0', 'before:left-0', 'before:right-0', 'before:bottom-0',
+    'before:opacity-50', 'before:rounded-lg', 'before:z-0', 'before:hover:opacity-75',
+    'hover:before:opacity-75', `before:${props.business.bg}`
+  ])
+
   return (
-    <Container href={props.business.url} target="_blank" image={props.business.image}>
+    <a href={props.business.url} target="_blank" className={linkClasses}>
       <div className={classes}>
         <Logo className="max-h-12 w-full shadow-lg" alt={props.business.name} />
       </div>
-    </Container>
+    </a>
   )
 }
 
@@ -58,39 +67,11 @@ interface Business {
   Logo: ElementType
   name: string
   url: string
-  image?: string
+  bg?: string
 }
 
 interface WorkHistoryLogoProps {
   business: Business
 }
-
-const Container = styled.a<{ image?: string }>`
-  position: relative;
-  background-color: rgba(0,0,0);
-  border-radius: 0.5rem;
-  &::before {
-    content: "";
-    ${props => props.image ? `background-image: url('${props.image}');` : null};
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    opacity: 0.5;
-    border-radius: 0.5rem;
-    z-index: 0;
-    &:active {
-      opacity: 0.75;
-    }
-  }
-  &:hover {
-    &::before {
-      opacity: 0.75;
-    }
-  }
-`
 
 export default ExperienceLogoCloud

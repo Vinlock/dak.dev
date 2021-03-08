@@ -6,20 +6,25 @@ services:
     command: bash -c "yarn && NODE_OPTIONS=--inspect yarn dev"
     working_dir: "/var/app"
     volumes:
+      - ./assets:/var/app/assets
       - ./components:/var/app/components
-      - ./db:/var/app/db
+      - ./config:/var/app/config
+      - ./contexts:/var/app/contexts
       - ./hooks:/var/app/hooks
+      - ./layout:/var/app/layout
       - ./lib:/var/app/lib
+      - ./modules:/var/app/modules
       - ./pages:/var/app/pages
       - ./public:/var/app/public
-      - ./stores:/var/app/stores
-      - ./views:/var/app/views
+      - ./styles:/var/app/styles
+      - ./.babelrc:/var/app/.babelrc
       - ./.npmrc:/var/app/.npmrc
+      - ./next.config.js:/var/app/next.config.js
+      - ./next-env.d.ts:/var/app/next-env.d.ts
       - ./package.json:/var/app/package.json
       - ./postcss.config.js:/var/app/postcss.config.js
       - ./tailwind.config.js:/var/app/tailwind.config.js
       - ./tsconfig.json:/var/app/tsconfig.json
-      - ./yarn.lock:/var/app/yarn.lock
       - node-modules:/var/app/node_modules
     tmpfs:
       - /var/app/.next

@@ -6,7 +6,7 @@ const socialMedia: SocialMedia[] = [
     hoverClasses: 'hover:text-twitter',
     iconClasses: 'text-twitter',
     title: 'Twitter',
-    url: 'https://twitter.com/vinlockz',
+    url: 'https://twitter.com/dakdevs',
   },
   {
     icon: ['fab', 'github'],
@@ -34,7 +34,7 @@ const socialMedia: SocialMedia[] = [
     hoverClasses: 'hover:text-instagram',
     iconClasses: 'text-instagram',
     title: 'Instagram',
-    url: 'https://instagram.com/vinlockz',
+    url: 'https://instagram.com/dakdevs',
   },
 ]
 
