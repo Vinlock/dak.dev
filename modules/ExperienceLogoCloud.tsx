@@ -1,6 +1,5 @@
 import type { ElementType, FC } from 'react'
 import classnames from 'classnames'
-import styled from 'styled-components'
 import NCSoftLogo from '../assets/svg/ncsoft_logo.svg'
 import WeedmapsLogo from '../assets/svg/weedmaps_full_logo_dark_bg.svg'
 
