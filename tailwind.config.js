@@ -24,7 +24,10 @@ module.exports = {
       './modules/**/*.jsx',
       './modules/**/*.ts',
       './modules/**/*.tsx',
-    ]
+    ],
+    options: {
+      safelist: ['bg-weedmaps-hq', 'bg-ncsoft-hq'],
+    },
   },
   darkMode: false, // or 'media' or 'class'
   theme: {
